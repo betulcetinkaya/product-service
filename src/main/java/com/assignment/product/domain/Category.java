@@ -1,38 +1,35 @@
 package com.assignment.product.domain;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
-import java.util.List;
 
 @Document
 public class Category implements Serializable {
 
     @Id
-    private Long id;
+    private String id;
 
-    private Long parentId;
+    private String parentId;
 
+    @NotEmpty(message = "NotEmpty.Category.title")
     private String title;
 
-    @DBRef
-    private List<Product> products;
-
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public Long getParentId() {
+    public String getParentId() {
         return parentId;
     }
 
-    public void setParentId(Long parentId) {
+    public void setParentId(String parentId) {
         this.parentId = parentId;
     }
 

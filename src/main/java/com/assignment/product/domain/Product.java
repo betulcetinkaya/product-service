@@ -1,24 +1,33 @@
 package com.assignment.product.domain;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
 public class Product implements Serializable {
 
     @Id
-    private Long id;
+    private String id;
 
+    @NotEmpty(message = "NotEmpty.Product.title")
     private String title;
 
+    @NotNull(message = "NotNull.Product.price")
     private BigDecimal price;
 
-    public Long getId() {
+    @DBRef
+    @NotNull(message = "NotNull.Product.category")
+    private Category category;
+
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -38,4 +47,11 @@ public class Product implements Serializable {
         this.price = price;
     }
 
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 }
