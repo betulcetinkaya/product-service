@@ -5,10 +5,9 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class Product implements Serializable {
+public class Product {
 
     @Id
     private String id;

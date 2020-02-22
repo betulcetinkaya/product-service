@@ -4,10 +4,9 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.validation.constraints.NotEmpty;
-import java.io.Serializable;
 
 @Document
-public class Category implements Serializable {
+public class Category {
 
     @Id
     private String id;
