@@ -16,6 +16,11 @@ public class ProductServiceImpl implements ProductService {
     private ProductRepository productRepository;
 
     @Override
+    public Product create(Product product) {
+        return productRepository.save(product);
+    }
+
+    @Override
     public Product getById(String id) {
         Optional<Product> product = productRepository.findById(id);
         if (!product.isPresent()) {
@@ -23,4 +28,5 @@ public class ProductServiceImpl implements ProductService {
         }
         return product.get();
     }
+
 }

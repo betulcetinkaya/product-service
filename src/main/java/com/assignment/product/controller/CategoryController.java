@@ -1,7 +1,7 @@
 package com.assignment.product.controller;
 
-import com.assignment.product.domain.Product;
-import com.assignment.product.service.ProductService;
+import com.assignment.product.domain.Category;
+import com.assignment.product.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -19,25 +19,25 @@ import javax.validation.Valid;
 
 
 @RestController
-@RequestMapping("/products")
-public class ProductController {
+@RequestMapping("/categories")
+public class CategoryController {
 
     @Autowired
-    private ProductService productService;
+    private CategoryService categoryService;
 
     @PostMapping(produces = {MediaType.APPLICATION_JSON_VALUE}, consumes = {MediaType.APPLICATION_JSON_VALUE})
     public
     @ResponseBody
-    ResponseEntity<Product> create(@Valid @RequestBody Product product) {
-        return new ResponseEntity<>(productService.create(product), HttpStatus.CREATED);
+    ResponseEntity<Category> create(@Valid @RequestBody Category category) {
+        return new ResponseEntity<>(categoryService.create(category), HttpStatus.CREATED);
     }
 
     @GetMapping(path = "/{id}")
     public
     @ResponseBody
-    ResponseEntity<Product> getById(@PathVariable("id") String id) {
-        Product product = productService.getById(id);
-        return new ResponseEntity<>(product, HttpStatus.OK);
+    ResponseEntity<Category> getById(@PathVariable("id") String id) {
+        Category category = categoryService.getById(id);
+        return new ResponseEntity<>(category, HttpStatus.OK);
     }
 
 }

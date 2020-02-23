@@ -6,4 +6,6 @@ public interface ProductService {
 
     Product getById(String id);
 
+    Product create(Product product);
+
 }

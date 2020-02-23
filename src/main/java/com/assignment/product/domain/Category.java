@@ -13,7 +13,7 @@ public class Category {
 
     private String parentId;
 
-    @NotEmpty(message = "NotEmpty.Category.title")
+    @NotEmpty(message = "{NotEmpty.Category.title}")
     private String title;
 
     public String getId() {
