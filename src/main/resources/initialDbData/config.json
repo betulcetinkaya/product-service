@@ -1,0 +1,12 @@
+[
+  {
+    "mapper": "com.assignment.product.domain.Category",
+    "name": "category",
+    "file": "category.json"
+  },
+  {
+    "mapper": "com.assignment.product.domain.Product",
+    "name": "product",
+    "file": "product.json"
+  }
+]
